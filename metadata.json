@@ -1,0 +1,6 @@
+{
+  "name": "Workout Gym 1st Branch",
+  "description": "Premium, modern, responsive website for WORKOUT GYM 1st Branch, Karachi. Features glassmorphism, animated counters, BMI calculator, custom gallery admin, and Google reviews.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

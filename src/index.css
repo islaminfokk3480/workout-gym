@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-brand-orange: #ff7b00;
+  --color-brand-orange-dark: #cc6200;
+  --color-brand-orange-light: #ff9533;
+}
+
+/* Custom Base Styles */
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+  background-color: #030303;
+  color: #f3f4f6;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Custom Utilities for Premium Look */
+.glass-card {
+  background: rgba(13, 13, 13, 0.7);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-nav {
+  background: rgba(3, 3, 3, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.neon-glow-orange {
+  box-shadow: 0 0 20px rgba(255, 123, 0, 0.35);
+}
+
+.neon-glow-orange-lg {
+  box-shadow: 0 0 40px rgba(255, 123, 0, 0.45);
+}
+
+.neon-text-orange {
+  text-shadow: 0 0 8px rgba(255, 123, 0, 0.5);
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #222;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff7b00;
+}
+
+/* Pulsing Custom Classes */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(255, 123, 0, 0.25);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 123, 0, 0.5);
+  }
+}
+
+.pulse-glow-orange {
+  animation: pulseGlow 3s infinite ease-in-out;
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translateY(0px) translateX(0px) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-80px) translateX(15px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.particle-animation-1 {
+  animation: particleFloat 6s infinite linear;
+}
+.particle-animation-2 {
+  animation: particleFloat 8s infinite linear 2s;
+}
+.particle-animation-3 {
+  animation: particleFloat 10s infinite linear 4s;
+}
+
+/* ----------------------------------------------------
+   UHN-PREMIUM LIGHT THEME SYSTEM OVERRIDES
+   Dynamically shifts standard dark elements to bright,
+   crisp athletic layouts on '.light' root injection.
+   ---------------------------------------------------- */
+html.light {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+html.light body {
+  background-color: #f8fafc !important;
+}
+
+/* Glass & Card components overrides */
+html.light .glass-card {
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(20px) saturate(190%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(190%) !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.08), 0 1px 3px rgba(15, 23, 42, 0.03) !important;
+}
+
+html.light .glass-nav {
+  background: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border-color: rgba(15, 23, 42, 0.08) !important;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.04) !important;
+}
+
+/* Invert solid dark backgrounds to crisp whites / slate grays */
+html.light .bg-zinc-950,
+html.light .bg-black,
+html.light .bg-zinc-900,
+html.light .bg-zinc-900\/50,
+html.light .bg-neutral-950,
+html.light .bg-black\/30,
+html.light .bg-black\/40,
+html.light .bg-zinc-950\/40 {
+  background-color: #ffffff !important;
+}
+
+html.light .bg-zinc-950\/80 {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+html.light .bg-white\/5 {
+  background-color: rgba(15, 23, 42, 0.04) !important;
+}
+
+html.light .bg-white\/10 {
+  background-color: rgba(15, 23, 42, 0.07) !important;
+}
+
+html.light .border-white\/5,
+html.light .border-white\/10 {
+  border-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+/* Invert Text typography colors */
+html.light .text-white,
+html.light .text-gray-100 {
+  color: #0f172a !important;
+}
+
+html.light .text-gray-300 {
+  color: #334155 !important;
+}
+
+html.light .text-gray-400 {
+  color: #475569 !important;
+}
+
+html.light .text-gray-500 {
+  color: #64748b !important;
+}
+
+html.light .text-gray-600 {
+  color: #94a3b8 !important;
+}
+
+html.light .text-zinc-700 {
+  color: #cbd5e1 !important;
+}
+
+/* Gradients Overrides */
+html.light .bg-gradient-to-b.from-black.to-zinc-950,
+html.light .bg-gradient-to-b.from-zinc-950.to-black,
+html.light .bg-gradient-to-b.from-black.via-zinc-950.to-black {
+  background-image: linear-gradient(to bottom, #f8fafc, #f1f5f9) !important;
+}
+
+html.light .bg-gradient-to-r.from-zinc-900.to-black {
+  background-image: linear-gradient(to right, #f1f5f9, #ffffff) !important;
+}
+
+html.light .bg-gradient-to-t.from-black\/95 {
+  background-image: linear-gradient(to top, rgba(248, 250, 252, 0.95), transparent) !important;
+}
+
+html.light .bg-gradient-to-t.from-black\/90 {
+  background-image: linear-gradient(to top, rgba(248, 250, 252, 0.9), transparent) !important;
+}
+
+html.light .bg-gradient-to-t.from-black\/80 {
+  background-image: linear-gradient(to top, rgba(248, 250, 252, 0.8), transparent) !important;
+}
+
+/* Special UI contrast modifications */
+html.light .text-gray-400.hover\:text-white:hover {
+  color: #0f172a !important;
+}
+
+html.light .border-white\/20:hover {
+  border-color: rgba(15, 23, 42, 0.25) !important;
+}
+
+html.light .border-white\/20 {
+  border-color: rgba(15, 23, 42, 0.15) !important;
+}
+
+html.light #tracker-input-task {
+  color: #0f172a !important;
+  background-color: rgba(15, 23, 42, 0.03) !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+}
+
+html.light #tracker-input-task::placeholder {
+  color: #94a3b8 !important;
+}
+
+html.light #tracker-input-task:focus {
+  border-color: #ff7b00 !important;
+}
